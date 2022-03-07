@@ -1,0 +1,41 @@
+.flex-stretch {
+  flex: 1 0 auto;
+}
+
+mat-card {
+  max-width: 400px;
+}
+
+mat-toolbar {
+  align-items: center;
+  display: flex;
+
+}
+
+mat-sidenav {
+  width: 200px;
+  padding: 16px;
+  text-align: center;
+
+//background: #002b5c;
+}
+
+mat-sidenav-content {
+  font-size: 2rem;
+  padding: 16px;
+
+  height: calc(100vh - 96px);
+}
+
+
+.menu-button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 1rem;
+
+  mat-icon {
+    margin-right: 8px;
+  }
+}

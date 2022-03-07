@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  name: 'dev',
+  MORALIS_APP_ID: '0EzAeJ69HEyZ8bcJSNbmN6zQZmqxEZmzj2ASyhmH',
+  MORALIS_SERVER_URL: 'https://zvrvmwurnsdy.usemoralis.com:2053/server'
 };
 
 /*

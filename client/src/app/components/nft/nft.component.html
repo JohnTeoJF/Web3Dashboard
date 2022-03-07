@@ -1,0 +1,37 @@
+<p>nft works!</p>
+
+<mat-card class="nft">
+  <mat-card-title class="nft">Search for your NFTs</mat-card-title>
+
+
+  <form [formGroup]="form" (ngSubmit)=" getNFT()">
+  <mat-card-content>
+<table>
+  <tr>
+    <td><label for="walletAddress">Wallet Address</label></td>
+  </tr>
+  <tr>
+    <td><input id="walletAddress" size="42" formControlName="walletAddress">
+    </td></tr>
+
+</table>
+
+</mat-card-content>
+<mat-card-actions class="nft">
+<button  type="submit" mat-raised-button color="accent">Get NFT
+</button>
+</mat-card-actions>
+
+</form>
+</mat-card>
+<div *ngFor="let i of nft">
+
+<mat-card class="nft">
+  <mat-card-title class="nft">{{i.name}}</mat-card-title>
+  <mat-card-subtitle class="nft">#{{i.token_id}}</mat-card-subtitle>
+
+  <a href="https://opensea.io/assets/{{i.token_address}}/{{i.token_id}}">
+    <button mat-raised-button color="primary" >View on Opensea</button>
+  </a>
+
+</mat-card>
