@@ -18,59 +18,27 @@ import { DialogComponent } from './dialog/dialog.component';
 })
 export class MainComponent implements OnInit {
 
-  userData!: UserData;
-
-  form!: FormGroup;
-
-  count: number | undefined
-
-  tx:
-    | {
-      hash: string;
-      nonce: string;
-      transaction_index: string;
-      from_address: string;
-      to_address: string;
-      value: string;
-      gas: string;
-      gas_price: string;
-      input: string;
-      receipt_cumulative_gas_used: string;
-      receipt_gas_used: string;
-      receipt_contract_address: string;
-      receipt_root: string;
-      receipt_status: string;
-      block_timestamp: string;
-      block_number: string;
-      block_hash: string;
-    }[]
-    | undefined;
-  nft:
-    | {
-      token_address: string;
-      token_id: string;
-      contract_type: string;
-      owner_of: string;
-      block_number: string;
-      block_number_minted: string;
-      token_uri?: string | undefined;
-      metadata?: string | undefined;
-      synced_at?: string | undefined;
-      amount?: string | undefined;
-      name: string;
-      symbol: string;
-    }[]
-    | undefined;
+  form!: FormGroup
+  userData: UserData[] = []
 
   constructor(
-    private dialog: MatDialog,
-    private router: Router,
-    private bcService: BlockchainService,
-    private fb: FormBuilder
-  ) { }
+    private router: Router,private bcService: BlockchainService, private fb: FormBuilder) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {  }
 
+  updateUser(t: Partial<UserData> = {}) {
+    console.log('Add userData')
+
+    this.form = this.fb.group({
+			emailAddress: this.fb.control(t.emailAddress || '', [ Validators.required, Validators.minLength(3) ]),
+			comments: this.fb.control(t.comments || '', [ Validators.required, Validators.minLength(3) ]),
+		})
+
+    const userInfo = this.form.value as UserData
+
+    console.info(userInfo)
+
+  }
 
 
 }

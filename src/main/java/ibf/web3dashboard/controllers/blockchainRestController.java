@@ -1,5 +1,7 @@
 package ibf.web3dashboard.controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
@@ -12,6 +14,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import ibf.web3dashboard.models.User;
 import ibf.web3dashboard.services.BlockchainService;
+
+import jakarta.json.Json;
+import jakarta.json.JsonArrayBuilder;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;

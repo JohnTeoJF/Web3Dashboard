@@ -14,6 +14,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { DialogComponent } from './components/dialog/dialog.component';
 import { LoginService } from 'src/services/loginService.service';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 const appRoutes: Routes = [
 	{ path: '', component: MainComponent },
@@ -30,7 +32,13 @@ const appRoutes: Routes = [
     FormsModule,ReactiveFormsModule,
     MatDialogModule,MaterialModule,
     HttpClientModule,
-    RouterModule.forRoot(appRoutes, { useHash: true })
+    RouterModule.forRoot(appRoutes, { useHash: true }),
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the app is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    })
   ],
   providers: [BlockchainService, LoginService],
   bootstrap: [AppComponent]

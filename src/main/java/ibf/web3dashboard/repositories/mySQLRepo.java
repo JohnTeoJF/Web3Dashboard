@@ -3,9 +3,6 @@ package ibf.web3dashboard.repositories;
 import java.util.LinkedList;
 import java.util.List;
 
-import java.sql.ResultSet;
-import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;

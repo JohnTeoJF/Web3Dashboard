@@ -1,7 +1,13 @@
 package ibf.web3dashboard.controllers;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import ibf.web3dashboard.repositories.mySQLRepo;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -13,7 +19,7 @@ public class dbRestController {
 	private final Logger logger = Logger.getLogger(blockchainRestController.class.getName());
 
 	@Autowired
-	private dbRestController dbSvc
+	private mySQLRepo mSqlRepo;
 
 	
 	// Listens to GET requests and return any results , no specific path

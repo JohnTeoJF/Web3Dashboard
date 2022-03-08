@@ -1,13 +1,13 @@
 package ibf.web3dashboard.models;
 
-import java.sql.ResultSet;
 import java.sql.SQLException;
+
+import org.springframework.jdbc.support.rowset.SqlRowSet;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 
 import jakarta.json.Json;
-import jakarta.json.JsonArray;
 import jakarta.json.JsonObject;
 import jakarta.json.JsonReader;
 
@@ -30,7 +30,7 @@ public class User {
 
 
 
-    public static User populate(ResultSet rs) throws SQLException {
+    public static User populate(SqlRowSet rs) throws SQLException {
         final User user = new User();
         user.setWalletAddress(rs.getString("walletAddress"));
         user.setEmailAddress(rs.getString("email"));
@@ -71,5 +71,7 @@ public class User {
 			.add("ethAddress", walletAddress)
 			.build();
 	}
+    public void add(User user) {
+    }
 
 }
