@@ -5,8 +5,8 @@
 export const environment = {
   production: false,
   name: 'dev',
-  MORALIS_APP_ID: '0EzAeJ69HEyZ8bcJSNbmN6zQZmqxEZmzj2ASyhmH',
-  MORALIS_SERVER_URL: 'https://zvrvmwurnsdy.usemoralis.com:2053/server'
+  MORALIS_APP_ID: '',
+  MORALIS_SERVER_URL: ''
 };
 
 /*
